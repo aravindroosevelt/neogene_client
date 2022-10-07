@@ -1,31 +1,34 @@
-import { Component } from 'react'
+import './app.styles.scss';
+import QRScanner from './components/QRScanner/QRScanner';
+import Table from './components/Table/Table';
+import S1 from './components/S1/S1';
+import S2 from './components/S2/S2';
+import S3 from './components/S3/S3';
+import Compare from './components/Compare/Compare';
+import React, { useMemo, useState } from "react";
 
-import Logo from './assets/altafino.svg'
-import './app.styles.scss'
+function App() {
+  // const [COIValue1, setCOIValue1] = useState();
+  // const [COIValue2, setCOIValue2] = useState();
 
-class App extends Component {
-  render() {
-    return (
-      <div className='flex items-center justify-center h-screen'>
-        <div className='text-black font-bold rounded-lg border shadow-lg p-10 m-20'>
-          <div>
-            Webpack 6 boilerplate with React 17, Tailwind 2, using babel, sass,
-            with a hot dev server and an optimized production build.
-            <a href="https://reactjsjob.com">React Jobs for React JS Developers</a>
-            <div className={'bg-red-500 text-white'}>
-              process.env.API_URL:{process.env.API_URL} !!! Make sure to put
-              both .env.* files in gitignore.
-            </div>
-            <div className={'container mx-auto px-4'}>
-              <a href={'https://altafino.com'}>
-                <Logo className={'mt-10 px-10'} />
-              </a>
-            </div>
-          </div>
+  return (
+    <div className='flex flex-col w-screen h-screen p-10 bg-gray-200'>
+      <div className='h-1/5 align-middle flex'><S1 /></div>
+      <hr className=' border-black' />
+      <div className='flex flex-row h-4/5 bg-gray-100'>
+        <div className=' w-1/3 items-center h-full flex justify-center bg-gray-100'>
+          <div id="scanner"></div>
+        </div>
+        <div className='w-2/3  items-center h-full'>
+          <div className=' h-2/5'><S2 /></div>
+          <hr className=' border-black' />
+          <div className='h-2/5'><S3 /></div>
+          <hr className=' border-black' />
+          <div className=' h-1/5'><Compare /></div>
         </div>
       </div>
-    )
-  }
+    </div>
+  )
 }
 
-export default App
+export default App;

@@ -1,7 +1,9 @@
 import axios from 'axios'
 import React, { useState, useEffect } from 'react'
+import { useDispatch } from 'react-redux'
 import ViewPatientTask from '../viewPatientTask/ViewPatientTask'
 import ViewPatientTable from '../viewPatientTable/ViewPatientTable'
+import { subjectTask } from '../../store/features/subjectTaskSlice'
 import './FetchPatientTask.scss'
 
 export default function FetchPateintTask() {
@@ -14,6 +16,7 @@ export default function FetchPateintTask() {
   const [error, setError] = useState('')
   const [fetchedData, setFetchedData] = useState([])
   const [fetchedPatientTask, setFetchedPatientTask] = useState([])
+  const dispatch = useDispatch()
 
   useEffect(() => {
     if (!viewData.COI) {
@@ -50,6 +53,7 @@ export default function FetchPateintTask() {
     const response = await axios.get(
       `http://localhost:8000/getSubjectTasks/${id}`
     )
+    dispatch(subjectTask.subjectTaskSFetch(response.data))
     setFetchedPatientTask(response.data)
   }
 

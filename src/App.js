@@ -15,7 +15,7 @@ function App() {
 
   return (
     <div className='flex flex-col w-screen h-screen p-10 '>
-      <div className='h-1/5 align-middle flex'><S1 /></div>
+      {/* <div className='h-1/5 align-middle flex'><S1 /></div>
       <hr className=' border-black' />
       <div className='flex flex-row h-4/5 bg-gray-100'>
         <div className=' w-1/3 items-center h-full flex justify-center bg-gray-100'>
@@ -29,7 +29,7 @@ function App() {
           <div className=' h-1/5'><Compare /></div>
         </div>
       </div>
-      <br></br>
+      <br></br> */}
       <FetchPatientTask/>
     </div>
   )

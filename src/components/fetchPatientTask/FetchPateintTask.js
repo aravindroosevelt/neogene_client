@@ -69,7 +69,7 @@ export default function FetchPateintTask() {
 
   return (
     <form onSubmit={handleSubmit}>
-      <div className='flex flex-wrap gap-8 -mx-3 mb-6'>
+      <div className='flex flex-wrap gap-8  '>
         <div>
           <label className='block  tracking-wide text-gray-700 text-xs  '>
             COI :{' '}
@@ -83,7 +83,7 @@ export default function FetchPateintTask() {
         </div>
         <div>
           <label className='block  tracking-wide text-gray-700 text-xs  '>
-            Subejct id :{' '}
+            Subejct Number :{' '}
           </label>
           <input
             className='appearance-none block  text-gray-700 border  rounded-sm py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500'
@@ -94,7 +94,7 @@ export default function FetchPateintTask() {
         </div>
         <div>
           <label className='block  tracking-wide text-gray-700 text-xs  '>
-            Lot :
+            LOT Number :
           </label>
           <input
             className='appearance-none block  text-gray-700 border  rounded-sm py-3 px-4 leading-tight focus:outline-none focus:bg-white focus:border-gray-500'

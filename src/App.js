@@ -1,12 +1,7 @@
 import './app.styles.scss';
-import QRScanner from './components/QRScanner/QRScanner';
-import Table from './components/Table/Table';
-import S1 from './components/S1/S1';
-import S2 from './components/S2/S2';
-import S3 from './components/S3/S3';
-import Compare from './components/Compare/Compare';
 import React, { useMemo, useState } from "react";
-import FetchPatientTask from './components/fetchPatientTask/FetchPateintTask';
+import { BrowserRouter } from 'react-router-dom';
+import MainPage from './components/Mainpage/MainPage';
 
 
 function App() {
@@ -14,7 +9,8 @@ function App() {
   // const [COIValue2, setCOIValue2] = useState();
 
   return (
-    <div className='flex flex-col w-screen h-screen p-10 '>
+    <BrowserRouter>
+    {/* <div className='flex flex-col w-screen h-screen px-6'>
       <div className='h-1/5 align-middle flex'><S1 /></div>
       <hr className=' border-black' />
       <div className='flex flex-row h-4/5 bg-gray-100'>
@@ -29,9 +25,10 @@ function App() {
           <div className=' h-1/5'><Compare /></div>
         </div>
       </div>
-      <br></br>
-      <FetchPatientTask/>
-    </div>
+     
+    </div> */}
+    <MainPage/>
+    </BrowserRouter>
   )
 }
 

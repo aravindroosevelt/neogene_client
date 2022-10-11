@@ -1,6 +1,14 @@
 import React from 'react'
+import { useSelector } from 'react-redux'
 export default function ViewPatientTask({ fetchedPatientTask, status }) {
-  if (status === 200) {
+
+const patientTask = useSelector((state)=>state.subjectTask.subjectTask)
+console.log( patientTask.map((data)=>data.data ))
+
+
+//patientTask.map((data)=>data.status ==200 )
+
+  if (patientTask.length>0 && patientTask[0].status == 200) {
     return (
       <>
         <div className='overflow-x-auto relative my-3 sm:rounded-lg'>
@@ -19,7 +27,7 @@ export default function ViewPatientTask({ fetchedPatientTask, status }) {
               </tr>
             </thead>
             <tbody>
-              {fetchedPatientTask.map((fetchedPatientTask, i) => {
+              {patientTask.map((data)=>data.data.map((fetchedPatientTask, i) => {
                 return (
                   <tr
                     className={
@@ -27,7 +35,7 @@ export default function ViewPatientTask({ fetchedPatientTask, status }) {
                         ? 'bg-blue-200   dark:bg-gray-900 dark:border-gray-700 hover:bg-blue-300 border-blue-500'
                         : fetchedPatientTask.Status=='Validation' ?'bg-gray-100 border-b dark:bg-gray-900 dark:border-gray-700 hover:bg-gray-100' :'bg-white border-b text-black dark:bg-gray-900 dark:border-gray-700 hover:bg-gray-100'
                     }
-                  >
+                 key={i} >
                     <td className='py-4 px-6'>
                       {fetchedPatientTask.ExecutionOrder}
                     </td>
@@ -58,7 +66,7 @@ export default function ViewPatientTask({ fetchedPatientTask, status }) {
                     ) : null}
                   </tr>
                 )
-              })}
+              }))}
             </tbody>
           </table>
         </div>

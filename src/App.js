@@ -1,4 +1,4 @@
-import './app.styles.scss';
+  import './app.styles.scss';
 import React, { useMemo, useState } from "react";
 import { BrowserRouter } from 'react-router-dom';
 import MainPage from './components/Mainpage/MainPage';

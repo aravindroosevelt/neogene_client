@@ -14,7 +14,7 @@ export default function navbar() {
       </div>
       <div className='flex flex-row px-7'>
         <a href="#" className="inline-block text-sm px-4 py-2 leading-none   text-black  hover:text-gray-500 hover:bg-gray-100 mt-4 lg:mt-0">John Doe</a>
-        <img  class='h-7 text-gray-100'src={Userlogo}></img>
+        <img  className='h-7 text-gray-100'src={Userlogo}></img>
       </div>
     </div>
   </nav>

@@ -21,6 +21,6 @@ export const SideBarData = [
   },
   {
     title: 'Patient Scans',
-    path: 'patient-scans',
+    path: '/patient-scans',
   },
 ]

@@ -6,11 +6,11 @@ import NavPage from '../navPage/NavPage'
 export default function MainPage() {
   return (
     <Layout>
-      <div class='flex p-4'>
-        <div class='w-1/6 bg-white h-screen pr-2 '>
+      <div className='flex p-4'>
+        <div className='w-1/6 bg-white h-screen pr-2 '>
           <SideBar />
         </div>
-        <div class='w-5/6 bg-gray-100 p-7'>
+        <div className='w-5/6 bg-gray-100 p-7'>
           {' '}
           <NavPage />
         </div>

@@ -1,14 +1,6 @@
 import React from 'react'
-import { useSelector } from 'react-redux'
 export default function ViewPatientTask({ fetchedPatientTask, status }) {
-
-const patientTask = useSelector((state)=>state.subjectTask.subjectTask)
-console.log( patientTask.map((data)=>data.data ))
-
-
-//patientTask.map((data)=>data.status ==200 )
-
-  if (patientTask.length>0 && patientTask[0].status == 200) {
+  if (status === 200) {
     return (
       <>
         <div className='overflow-x-auto relative my-3 sm:rounded-lg'>
@@ -27,7 +19,7 @@ console.log( patientTask.map((data)=>data.data ))
               </tr>
             </thead>
             <tbody>
-              {patientTask.map((data)=>data.data.map((fetchedPatientTask, i) => {
+              {fetchedPatientTask.map((fetchedPatientTask, i) => {
                 return (
                   <tr
                     className={
@@ -57,16 +49,16 @@ console.log( patientTask.map((data)=>data.data ))
                           <button className='px-5 py-1 bg-blue-500 text-white border rounded border-blue-700 uppercase'>Scan</button>{' '}
                         </div>
                       </td>
-                    ) : fetchedPatientTask.Status == 'Validation' ? (
+                    ) : fetchedPatientTask.Status == 'Pending' ? (
                       <td className='py-4 px-6 text-grey-900'>
-                        <span className='bg-grey-100 text-grey-500 border border-black rounded  px-3 py-1'>
+                        {/* <span className='bg-grey-100 text-grey-500 border border-black rounded  px-3 py-1'>
                         Pending
-                        </span>
+                        </span> */}
                       </td>
                     ) : null}
                   </tr>
                 )
-              }))}
+              })}
             </tbody>
           </table>
         </div>

@@ -1,6 +1,7 @@
 import React from 'react'
 
 export default function ViewPatientTable({ status, subjectData }) {
+ 
   if (status === 200) {
     return (
       <>

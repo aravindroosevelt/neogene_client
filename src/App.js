@@ -1,8 +1,8 @@
-  import './app.styles.scss';
-import React, { useMemo, useState } from "react";
-import { BrowserRouter } from 'react-router-dom';
-import MainPage from './components/Mainpage/MainPage';
-
+import './app.styles.scss'
+import React, { useMemo, useState } from 'react'
+import { BrowserRouter } from 'react-router-dom'
+// import MainPage from './components/Mainpage/MainPage';
+import MainPage from './components/mainpage/MainPage'
 
 function App() {
   // const [COIValue1, setCOIValue1] = useState();
@@ -10,7 +10,7 @@ function App() {
 
   return (
     <BrowserRouter>
-    {/* <div className='flex flex-col w-screen h-screen px-6'>
+      {/* <div className='flex flex-col w-screen h-screen px-6'>
       <div className='h-1/5 align-middle flex'><S1 /></div>
       <hr className=' border-black' />
       <div className='flex flex-row h-4/5 bg-gray-100'>
@@ -27,9 +27,9 @@ function App() {
       </div>
      
     </div> */}
-    <MainPage/>
+      <MainPage />
     </BrowserRouter>
   )
 }
 
-export default App;
+export default App

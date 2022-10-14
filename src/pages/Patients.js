@@ -7,7 +7,7 @@ import SearchPatient from '../components/searchPatient/SearchPatient'
 export default function Patients() {
   const [allPatientData, setAllPatientData] = useState([])
 
-  const navigate=useNavigate();
+  const navigate = useNavigate()
   const fetchData = async () => {
     try {
       const response = await axios.get('http://localhost:8000/getAllSubject')
@@ -22,11 +22,11 @@ export default function Patients() {
 
   return (
     <>
-    <div className='flex flex-row'>
-      <div className=''></div>
-      <button clas></button>
-    </div>
-     <SearchPatient></SearchPatient>
+      <div className='flex flex-row'>
+        <div className=''></div>
+        <button></button>
+      </div>
+      <SearchPatient></SearchPatient>
       <div className='overflow-x-auto'>
         <div className='min-w-screen   font-sans "'>
           <div className=' w-full  sm:w-auto'>
@@ -102,7 +102,9 @@ export default function Patients() {
                           <button
                             className='px-3 bg-blue-500 py-1 text-white rounded hover:bg-blue-600'
                             value={data.SubjectID}
-                            onClick={()=>navigate(`/patient/${data.SubjectID}`)}
+                            onClick={() =>
+                              navigate(`/patient/${data.SubjectID}`)
+                            }
                           >
                             View
                           </button>

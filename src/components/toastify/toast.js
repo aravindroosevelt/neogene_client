@@ -21,8 +21,6 @@ function Toast() {
   const dispatch = useDispatch()
   const data = useSelector((state) => state.toast)
 
-  console.log(data)
-
   return (
     data &&
     data.type && (
